@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://n6rgiuhr4gj3"]
+
+[ext_resource type="Script" path="res://scenes/card.gd" id="1_h3f7x"]
+[ext_resource type="Texture2D" uid="uid://dqvvigvbu4gx1" path="res://assets/sprites/card_template.png" id="1_yntrq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8jsbl"]
+size = Vector2(37, 56)
+
+[node name="Card" type="Node2D"]
+script = ExtResource("1_h3f7x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 3)
+shape = SubResource("RectangleShape2D_8jsbl")
+
+[node name="CanvasGroup" type="CanvasGroup" parent="Area2D"]
+
+[node name="card_template" type="Sprite2D" parent="Area2D/CanvasGroup"]
+position = Vector2(-7.62939e-06, 3.8147e-06)
+scale = Vector2(0.372222, 0.394444)
+texture = ExtResource("1_yntrq")
+
+[node name="AttackLabel" type="Label" parent="Area2D/CanvasGroup/card_template"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -53.7313
+offset_top = -131.831
+offset_right = -3.73135
+offset_bottom = -108.831
+grow_vertical = 0
+text = "Attack"
+vertical_alignment = 1
+
+[node name="DefenseLabel" type="Label" parent="Area2D/CanvasGroup/card_template"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 2.04969e-05
+offset_top = -131.831
+offset_right = 64.0
+offset_bottom = -108.831
+grow_vertical = 0
+text = "Defense"
+vertical_alignment = 1
